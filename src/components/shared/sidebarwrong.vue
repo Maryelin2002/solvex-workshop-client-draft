@@ -23,7 +23,7 @@
                 tag="router-link"
                 :to="{ path: '/workshops' }"
               ></b-menu-item>
-            <b-menu-item expanded icon="settings" label="Administrator">
+            <b-menu-item active expanded icon="settings" label="Administrator">
               <b-menu-item
                 icon="account"
                 label="Users"
@@ -87,7 +87,5 @@ export default class Sidebar extends mixins(SidebarMixin) {
 .p-1 {
   padding: 1em !important;
 }
-
-
 
 </style>

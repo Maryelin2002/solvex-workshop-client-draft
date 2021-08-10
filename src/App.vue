@@ -5,9 +5,7 @@
       <navbar />
       <sidebar />
 
-      <div class="main-content">
-          <router-view />
-      </div>
+      <router-view></router-view>
     </div>
 
     <div v-else>
