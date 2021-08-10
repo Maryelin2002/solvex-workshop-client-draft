@@ -1,14 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    
+    <div v-if="isLoggedIn">
+      <navbar />
+      <sidebar />
+
+      <div class="main-content">
+          <router-view />
+      </div>
     </div>
-    <router-view/>
+
+    <div v-else>
+      <Login />
+      <router-view />
+    </div>
   </div>
 </template>
 
+<script lang="ts">
+import { Component } from 'vue-property-decorator'
+import { mixins } from "vue-class-component"
+import { LoginMixin } from "@/mixins/login.mixins"
+
+@Component
+export default class App extends mixins(LoginMixin) { }
+
+</script>
+
 <style lang="scss">
+@import "assets/styles/themecolors.scss";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
